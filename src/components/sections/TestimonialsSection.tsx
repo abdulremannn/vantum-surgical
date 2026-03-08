@@ -5,13 +5,16 @@ export function TestimonialsSection() {
   return (
     <section className="section" style={{ background: 'var(--off-white)', borderBottom: '1px solid var(--border)' }}>
       <div className="container">
-        <FadeUp style={{ marginBottom: '3.5rem' }}>
-          <span className="accent-line" />
-          <p className="label" style={{ marginBottom: '0.5rem' }}>Trusted By</p>
-          <h2 className="heading-lg">Trusted by leading<br />surgeons worldwide.</h2>
-        </FadeUp>
+        <div style={{ marginBottom: '3.5rem' }}>
+          <FadeUp>
+            <span className="accent-line" />
+            <p className="label" style={{ marginBottom: '0.5rem' }}>Trusted By</p>
+            <h2 className="heading-lg">Trusted by leading<br />surgeons worldwide.</h2>
+          </FadeUp>
+        </div>
 
-        <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ background: 'var(--border)' }} stagger={100}>
+        <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-px" stagger={100}>
+          <div style={{ background: 'var(--border)' }}>
           {TESTIMONIALS.map((t) => (
             <StaggerItem key={t.id}>
               <div style={{ background: 'white', padding: '2.5rem', height: '100%', display: 'flex', flexDirection: 'column' }}>
@@ -30,6 +33,7 @@ export function TestimonialsSection() {
               </div>
             </StaggerItem>
           ))}
+          </div>
         </Stagger>
       </div>
     </section>

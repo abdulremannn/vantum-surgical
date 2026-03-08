@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { CheckCircle2, Clock, Shield } from 'lucide-react'
+import { Shield } from 'lucide-react'
 import { CERTIFICATIONS } from '@/data'
 import { FadeUp, Stagger, StaggerItem } from '@/components/animations/FadeUp'
 
@@ -41,9 +41,11 @@ export default function CertificationsPage() {
         <div className="container">
 
           {/* Certifications */}
-          <FadeUp style={{ marginBottom: '1.5rem' }}>
-            <h2 className="heading-lg">Our Certifications</h2>
-          </FadeUp>
+          <div style={{ marginBottom: '1.5rem' }}>
+            <FadeUp>
+              <h2 className="heading-lg">Our Certifications</h2>
+            </FadeUp>
+          </div>
 
           <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-20" stagger={80}>
             {CERTIFICATIONS.map((cert) => {
@@ -74,9 +76,11 @@ export default function CertificationsPage() {
           </Stagger>
 
           {/* Standards */}
-          <FadeUp style={{ marginBottom: '1.5rem' }}>
-            <h2 className="heading-lg">Applicable Standards</h2>
-          </FadeUp>
+          <div style={{ marginBottom: '1.5rem' }}>
+            <FadeUp>
+              <h2 className="heading-lg">Applicable Standards</h2>
+            </FadeUp>
+          </div>
 
           <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20" stagger={80}>
             {STANDARDS.map((sec) => (

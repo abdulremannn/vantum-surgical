@@ -7,16 +7,18 @@ export function CategoriesSection() {
   return (
     <section className="section" style={{ background: 'white' }}>
       <div className="container">
-        <FadeUp style={{ marginBottom: '2.5rem' }}>
-          <span className="accent-line" />
-          <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
-            <div>
-              <p className="label" style={{ marginBottom: '0.4rem' }}>Assortment</p>
-              <h2 className="heading-lg">Our Product Lines</h2>
+        <div style={{ marginBottom: '2.5rem' }}>
+          <FadeUp>
+            <span className="accent-line" />
+            <div style={{ display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+              <div>
+                <p className="label" style={{ marginBottom: '0.4rem' }}>Assortment</p>
+                <h2 className="heading-lg">Our Product Lines</h2>
+              </div>
+              <Link href="/categories" className="link-arrow">View all <span className="arrow">→</span></Link>
             </div>
-            <Link href="/categories" className="link-arrow">View all <span className="arrow">→</span></Link>
-          </div>
-        </FadeUp>
+          </FadeUp>
+        </div>
 
         {/* Top 2 large */}
         <div className="cat-grid-main" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', marginBottom: '1rem' }}>
