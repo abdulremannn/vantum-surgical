@@ -5,7 +5,7 @@ export function WhatsAppButton() {
   const [visible, setVisible] = useState(false)
   useEffect(() => { const t = setTimeout(() => setVisible(true), 2000); return () => clearTimeout(t) }, [])
 
-  const url = `https://wa.me/923279974498?text=${encodeURIComponent('Hello, I would like to inquire about your surgical instruments.')}`
+  const url = `https://wa.me/923338625991?text=${encodeURIComponent('Hello, I would like to inquire about your surgical instruments.')}`
 
   return (
     <a

@@ -1,1 +1,1 @@
-{"version":1,"functions":{"/catalog":{},"/about":{},"/categories":{},"/categories/[slug]":{},"/certifications":{}}}
+{"version":1,"functions":{"/about":{},"/categories":{},"/catalog":{},"/certifications":{},"/categories/[slug]":{}}}
