@@ -58,8 +58,8 @@ export function Navbar() {
 
             {/* Desktop CTA */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem' }} className="hide-mobile">
-              <a href="tel:+19179395371" style={{ fontSize: '0.8125rem', color: 'var(--text-mid)', textDecoration: 'none' }}>
-                +1 (917) 939-5371
+              <a href="tel:+13472722196" style={{ fontSize: '0.8125rem', color: 'var(--text-mid)', textDecoration: 'none' }}>
+                +1 (347) 272-2196
               </a>
               <Link href="/quote" className="btn btn-primary" style={{ padding: '0.625rem 1.25rem', fontSize: '0.75rem' }}>
                 Request Quote
@@ -118,7 +118,7 @@ export function Navbar() {
               </nav>
 
               <div style={{ padding: '1.5rem', borderTop: '1px solid var(--border)', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                <a href="tel:+19179395371" style={{ fontSize: '0.875rem', color: 'var(--text-mid)', textDecoration: 'none', textAlign: 'center' }}>+1 (917) 939-5371</a>
+                <a href="tel:+13472722196" style={{ fontSize: '0.875rem', color: 'var(--text-mid)', textDecoration: 'none', textAlign: 'center' }}>+1 (347) 272-2196</a>
                 <Link href="/quote" className="btn btn-primary" style={{ justifyContent: 'center', width: '100%' }}>Request a Quote</Link>
               </div>
             </motion.div>

@@ -38,7 +38,7 @@ export default function QuotePage() {
     setSubmitting(true)
     setError(null)
     try {
-      const res = await fetch('http://localhost:8000/api/quotes/', {
+      const res = await fetch('https://web-production-10386.up.railway.app/api/quotes/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -85,11 +85,11 @@ export default function QuotePage() {
 
       <div className="section">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 'clamp(3rem,6vw,6rem)' }}>
+          <div className="quote-layout">
 
             {/* Sidebar */}
             <FadeUp>
-              <div style={{ position: 'sticky', top: '5rem' }}>
+              <div className="quote-sidebar">
                 <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', color: 'var(--black)', marginBottom: '1.5rem', fontWeight: 400 }}>Contact Details</h2>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2.5rem' }}>
                   {[
@@ -122,7 +122,7 @@ export default function QuotePage() {
                 {/* Products */}
                 <fieldset style={{ border: 'none', padding: 0, margin: 0 }}>
                   <legend className="input-label" style={{ marginBottom: '0.875rem' }}>Product Lines of Interest *</legend>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.5rem' }}>
+                  <div className="product-grid">
                     {CATEGORIES.map(cat => {
                       const on = selected.includes(cat.slug)
                       return (
@@ -143,7 +143,7 @@ export default function QuotePage() {
                 </fieldset>
 
                 {/* Fields */}
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+                <div className="form-grid">
                   {[
                     { id: 'name', label: 'Full Name', type: 'text', placeholder: 'Dr. John Smith', key: 'name' },
                     { id: 'company', label: 'Company / Organisation', type: 'text', placeholder: 'General Hospital', key: 'company' },
@@ -161,7 +161,7 @@ export default function QuotePage() {
                     </div>
                   ))}
 
-                  <div style={{ gridColumn: '1 / -1' }}>
+                  <div className="form-full">
                     <label htmlFor="country" className="input-label">Country *</label>
                     <select id="country" {...register('country')} className="input" style={{ borderColor: errors.country ? '#c0392b' : undefined }}>
                       <option value="">Select your country...</option>

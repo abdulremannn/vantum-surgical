@@ -510,3 +510,63 @@
     padding: 2.5rem;
   }
 }
+/* ============================================
+   RESPONSIVE QUOTE PAGE LAYOUT
+   ============================================ */
+
+/* Main layout - sidebar + form */
+.quote-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .quote-layout {
+    grid-template-columns: 1fr 2fr;
+    gap: clamp(3rem, 6vw, 6rem);
+  }
+}
+
+/* Sidebar sticky on desktop only */
+.quote-sidebar {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .quote-sidebar {
+    position: sticky;
+    top: 5rem;
+  }
+}
+
+/* Product selection buttons */
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Form fields grid */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Full-width field in grid */
+.form-full {
+  grid-column: 1 / -1;
+}
