@@ -570,3 +570,15 @@
 .form-full {
   grid-column: 1 / -1;
 }
+/* ============================================
+   LOADING SPINNER ANIMATION
+   ============================================ */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
