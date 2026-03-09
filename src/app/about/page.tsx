@@ -35,9 +35,9 @@ export default function AboutPage() {
       {/* Story */}
       <div className="section" style={{ borderBottom: '1px solid var(--border)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(3rem,6vw,6rem)', alignItems: 'center' }}>
+          <div className="story-grid">
             <FadeUp>
-              <div style={{ position: 'relative', aspectRatio: '4/3', background: 'var(--light)', overflow: 'hidden' }}>
+              <div style={{ position: 'relative', aspectRatio: '4/3', background: 'var(--light)', overflow: 'hidden', borderRadius: '4px' }}>
                 <Image src="/images/factory.jpg" alt="Vantum Surgical facility" fill className="object-cover" sizes="(max-width:768px) 100vw, 50vw" />
               </div>
             </FadeUp>
@@ -63,13 +63,12 @@ export default function AboutPage() {
               <p className="label" style={{ marginBottom: '0.5rem' }}>Process</p>
               <h2 className="heading-lg">How we build<br />every instrument.</h2>
             </div>
-        </FadeUp>
+          </FadeUp>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--border)' }}>
+          <div className="process-grid">
             {STEPS.map((step, i) => (
               <FadeUp key={step.n} delay={i * 60}>
-                <div style={{ background: 'var(--off-white)', padding: '2.5rem', height: '100%', transition: 'background 0.25s' }}
-                >
+                <div className="process-card">
                   <div style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem', color: 'var(--border-med)', marginBottom: '1rem', lineHeight: 1 }}>{step.n}</div>
                   <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.125rem', color: 'var(--black)', marginBottom: '0.75rem', fontWeight: 400 }}>{step.title}</h3>
                   <p className="body-md">{step.desc}</p>
