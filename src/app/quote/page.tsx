@@ -35,30 +35,35 @@ export default function QuotePage() {
   }
 
   const onSubmit = async (data: Form) => {
-    setSubmitting(true)
-    setError(null)
-    try {
-      const res = await fetch('https://web-production-10386.up.railway.app/api/quotes/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          full_name: data.name,
-          company: data.company,
-          email: data.email,
-          phone: data.phone,
-          country: data.country,
-          product_lines: data.products,
-          message: data.message,
-        }),
-      })
-      if (!res.ok) throw new Error()
+  setSubmitting(true)
+  setError(null)
+  try {
+    const res = await fetch('https://web-production-10386.up.railway.app/api/quotes/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        full_name: data.name,
+        company: data.company,
+        email: data.email,
+        phone: data.phone,
+        country: data.country,
+        product_lines: data.products,
+        message: data.message,
+      }),
+    })
+    // Accept both 200 and 201 status codes (Django REST returns 201 for POST)
+    if (res.ok || res.status === 201) {
       setSubmitted(true)
-    } catch {
-      setError('Something went wrong. Please email us directly at sales@vantumsurgical.com')
-    } finally {
-      setSubmitting(false)
+    } else {
+      throw new Error('Request failed')
     }
+  } catch (err) {
+    console.error('Quote submission error:', err)
+    setError('Something went wrong. Please email us directly at sales@vantumsurgical.com')
+  } finally {
+    setSubmitting(false)
   }
+}
 
   if (submitted) return (
     <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
